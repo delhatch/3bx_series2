@@ -11,5 +11,11 @@
 </ul>
 <h2>Processing</h2>
 <p>First the incoming audio is split into 3 audio bands, low- mid- and high-frequency bands.</p>
-<p>The audio goes thourgh a VCA, and then is summed to create the audio output.</p>
-<p>The VCA is controlled by the output of an RMS detector.</p>
+<p>The audio for each band goes through a VCA (voltage controlled amplifier), and then the three bands are summed to create the audio output.</p>
+<p>The VCA is controlled by the output of an RMS (root mean squared) detector, with some added processing. The RMS detector generates a signal that indicates the power of the audio signal, with some special consideration.
+<ul>
+  <li>During the rising edge of signals, the RMS output closely follows the energy of the signal.</li>
+  <li>The output then holds the amplitude using a simple RC filter. The RC filter is drained using a constaint current source, for a linear falling slope. (Linear in the dB domain.)</li>
+  <li>The RMS detector for the audio mid-band has an additional processing step: the detector's output instantly pumps up a simple RC circuit with a discharge time-constant of 1 second. This keeps the gain change from dropping too rapidly, reducing "pumping."</li>
+</ul>
+</p>
