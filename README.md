@@ -19,3 +19,9 @@
   <li>The RMS detector for the audio mid-band has an additional processing step: the detector's output instantly pumps up a simple RC circuit with a discharge time-constant of 1 second. This keeps the gain change from dropping too rapidly, reducing "pumping."</li>
 </ul>
 </p>
+<h2>TODO</h2>
+<ul>
+  <li>Convert to a stand-alone chassis. Connect to the expansion board as used in the AM/FM SDR tuner project.</li>
+  <li>Write Python code for the potentiometers to set the parameters.</li>
+  <li>Buy another 19" Black box chassis.</li>
+</ul>
